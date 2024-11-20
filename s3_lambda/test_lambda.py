@@ -22,7 +22,7 @@ class Test(unittest.TestCase):
         print('\r\nInvoking the lambda function...')
         payload = main_utils.invoke_function('lambda')
         bucket_objects=main_utils.list_s3_bucket_objects('hands-on-cloud-bucket')
-        # self.assertEqual(bucket_objects,['hands-on-cloud.txt'])
+        self.assertEqual(bucket_objects,{'hands-on-cloud.txt'})
     def test_c_teardown_class(self):
         print('\r\nDeleting the lambda function...')
         main_utils.delete_lambda('lambda')
